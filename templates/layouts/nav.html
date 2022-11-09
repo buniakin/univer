@@ -39,17 +39,17 @@
 
               {% if not user.is_authenticated %}
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Signin</a>
+                    <a class="nav-link" href="/account/entry">Signin</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Signup</a>
+                    <a class="nav-link" href="/account/reg">Signup</a>
                   </li>
               {% else %}
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Exit</a>
+                    <a class="nav-link" href="/account/exit">Exit</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
+                    <a class="nav-link" href="/account/profile">Profile</a>
                   </li>
               {% endif %}
               </ul>

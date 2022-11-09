@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/home">UNIVER</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/home">Main</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/home/about">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/news">News</a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/faculties">Faculties</a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/home/contact">Contacts</a>
+                  </li>
+              </ul>
+              <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"
+                          style="margin-right: 75px">
+                        Welcome,
+                        {% if user.is_authenticated %}
+                            <span style="color: lime">
+                                {{ user.username }}
+                            </span>
+                        {% else %}
+                            <span style="color: yellow">Guest</span>
+                        {% endif %}
+                    </a>
+                  </li>
+
+              {% if not user.is_authenticated %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Signin</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Signup</a>
+                  </li>
+              {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Exit</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Profile</a>
+                  </li>
+              {% endif %}
+              </ul>
+        </div>
+    </div>
+  </nav>
